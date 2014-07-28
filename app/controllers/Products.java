@@ -6,7 +6,7 @@ import play.mvc.*;//* is Wild card - This will take all in play.mvc
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.data.Form;
-//import views.html.products.details;
+import views.html.products.details;
 import java.util.List;
 
 
@@ -17,13 +17,13 @@ public class Products extends Controller {
        return ok(list.render(products));
    }
     public static Result newProduct(){
-        return TODO;
+        return ok(details.render(productForm));
     }
     public static Result details(String ean){
         return TODO;
     }
-    public static Result save(){
-        return TODO;
+    public static Result save(){return ok();
     }
+    private static final Form<model.Product> productForm = Form.form(model.Product.class);
 }
 

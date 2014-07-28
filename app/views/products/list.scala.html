@@ -1,6 +1,6 @@
 @(products: List[model.Product])
 
-@main("Product catalogue") {
+@main("Product catalogue"){
         <h2>All Products</h2>
 
         <table class="table table-striped">
@@ -21,6 +21,6 @@
             }
             </tbody>
         </table>
-        <a href="@routes.Products.newProduct()" class="btn">
+        <a href="@routes.Products.newProduct()" class="btn btn-primary">
             <i class="icon-plus"></i>New Product</a>
 }
