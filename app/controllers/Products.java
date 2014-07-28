@@ -19,10 +19,16 @@ public class Products extends Controller {
     public static Result newProduct(){
         return ok(details.render(productForm));
     }
-    public static Result details(String ean){
+
+    public static Result details(String EAN){
         return TODO;
     }
-    public static Result save(){return ok();
+
+    public static Result save(){
+        Form<Product> boundForm = productForm.bindFromRequest();
+        Product product = boundForm.get();
+        product.save();
+        return ok(String.format("Saved product %s", product));
     }
     private static final Form<model.Product> productForm = Form.form(model.Product.class);
 }

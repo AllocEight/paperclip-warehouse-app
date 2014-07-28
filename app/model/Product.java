@@ -33,7 +33,7 @@ public class Product {
 
 
     public String toString(){
-        return String.format("%s - %s", ean, name);
+        return String.format("%s - %s", this.ean, this.name);
     }
 
 
