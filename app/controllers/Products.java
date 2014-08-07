@@ -11,6 +11,9 @@ import java.util.List;
 
 
 public class Products extends Controller {
+
+    private static final Form<model.Product> productForm = Form.form(model.Product.class);
+
    public static Result list(){
         List<Product> products = Product.findAll();
 
@@ -30,6 +33,6 @@ public class Products extends Controller {
         product.save();
         return ok(String.format("Saved product %s", product));
     }
-    private static final Form<model.Product> productForm = Form.form(model.Product.class);
+
 }
 
